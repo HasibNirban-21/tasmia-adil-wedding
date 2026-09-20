@@ -703,7 +703,7 @@ const weddingConfig = {
   nikah: {
     date: "Tuesday, 27th October 2026",
     time: "After Namaz-e-Isha",
-    venue: "Jama Masjid, Rajgangpur"
+    venue: ""
   },
 
   events: [
@@ -716,7 +716,7 @@ const weddingConfig = {
       venue:"Sai Garden, Liploi, Rajgangpur", note:"" },
     { icon:"mosque", title:"Nikah-e-Masnoon",
       date:"Tuesday, 27th October 2026", time:"After Namaz-e-Isha",
-      venue:"Jama Masjid, Rajgangpur", note:"" },
+      venue:"", note:"" },
     { icon:"dinner", title:"Dinner",
       date:"Tuesday, 27th October 2026", time:"8:00 pm onwards",
       venue:"Sai Garden, Liploi, Rajgangpur", note:"" },
@@ -736,7 +736,7 @@ const weddingConfig = {
   showStory: false,   // set to true once you have your own story text below
   story: [
     { title:"Two Families", text:"The families of Baraduwar Road and Sangam Marg, Rajgangpur, come together in joy." },
-    { title:"The Nikah", text:"Tuesday, 27th October 2026, after Namaz-e-Isha at Jama Masjid, Rajgangpur, Insha Allah." },
+    { title:"The Nikah", text:"Tuesday, 27th October 2026, after Namaz-e-Isha, Insha Allah." },
     { title:"Rukhsati", text:"Wednesday, 28th October 2026, at 10:00 am from our residence." }
   ],
 
@@ -779,6 +779,7 @@ $$("[data-cfg]").forEach(el=>{
   } else if(text[k]!==undefined){ el.textContent = text[k]; }
 });
 $("#mapBtn").href = W.venue.mapUrl;
+if(!W.nikah.venue){ const nv = $(".nikah-meta .venue"); if(nv) nv.remove(); }
 document.title = W.brideShort+" & "+W.groomShort+" — Wedding Invitation";
 
 /* ---------- timeline ---------- */
